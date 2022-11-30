@@ -1,2 +1,2 @@
 # Responsive-Site
-Kako bi se otvorila košarica potrebno je u instalirati potrebne datoteke (npm install). Te pokrenut preCSS-compiler sa npm start.
+Kako bi se otvorila košarica potrebno je instalirati potrebne datoteke (npm install). Te pokrenut preCSS-compiler sa npm start. 
