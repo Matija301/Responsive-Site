@@ -6,5 +6,6 @@ const headerTex = document.querySelector(".header-tex")
 btn.addEventListener("click",(e) =>{
     btnOpen.classList.toggle("hidden")
     btnClosed.classList.toggle("hidden")
+    btnOpen.classList.toggle("sticky")
     headerTex.classList.toggle("header-tex-open")
 })

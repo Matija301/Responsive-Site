@@ -19,15 +19,15 @@
     margin-left: auto;
     gap: 3.6rem;
     @include xs{
-    background-color: rgba(255, 255, 255, 0.97);
+    background-color: #fefdf9;
     position: absolute;
     top: 0;
     right: 0;
-    width: 60%;
+    width: 75%;
     height: 100vh;
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     transition: all 0.5s ease-in;
     //Kada se doda class open onda se ovo ispod mjenja 
@@ -35,8 +35,25 @@
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
+    
     }
 }
+
+.header-tex p{
+    @include xs{
+        color: $main-color;
+        font-size: 2.4rem;
+        margin-left: 2.4rem;
+    }
+}
+
+.header-tex p:nth-child(1){
+    @include xs{
+    margin-top: 15rem;
+    }
+}
+
+
 
 .header-tex-open{
     @include xs {
@@ -47,6 +64,7 @@
     position: fixed;
 }
 }
+
 
 .hidden{
     display: none !important;
@@ -63,6 +81,10 @@
         display: block;
         margin-left: auto;
     }
+}
+
+.sticky{
+    position: fixed !important;
 }
 
 .header-button svg{
@@ -152,6 +174,17 @@ gap: 2.4rem;
     color: $list-color;
     font-size: 3.6rem;
     font-weight: 800;
+}
+
+.texts-header, .texts-header:link, .texts-header:visited{
+    color: $list-color;
+    font-size: 3.6rem;
+    font-weight: 800;
+    transition: all 0.3s;
+}
+
+.texts-header:hover, .right-side h3:active{
+    color: #ebae5b;
 }
 
 .right-side-list{
