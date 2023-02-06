@@ -2,23 +2,24 @@
 @use "./resets" as *;
 @use "./media" as *;
 
-.header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    margin: 0 auto;
-    padding: 0 1.2rem;
-    margin-top: 4.8rem;
-    @include max-width;
-    font-size: 1.6rem;
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto;
+  padding: 0 1.2rem;
+  margin-top: 4.8rem;
+  @include max-width;
+  font-size: 1.6rem;
 }
 
-.header-tex{
-    display: flex;
-    margin-left: auto;
-    gap: 3.6rem;
-    @include xs{
+.header-tex {
+  display: flex;
+  margin-left: auto;
+  gap: 3.6rem;
+  border: none;
+  @include xs {
     background-color: #fefdf9;
     position: absolute;
     top: 0;
@@ -30,241 +31,249 @@
     justify-content: flex-start;
     flex-direction: column;
     transition: all 0.5s ease-in;
-    //Kada se doda class open onda se ovo ispod mjenja 
+    //Kada se doda class open onda se ovo ispod mjenja
     transform: translateX(100%);
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
-    
-    }
+  }
 }
 
-.header-tex p{
-    @include xs{
-        color: $main-color;
-        font-size: 2.4rem;
-        margin-left: 2.4rem;
-    }
+.header-tex p {
+  @include xs {
+    color: $main-color;
+    font-size: 2.4rem;
+    margin-left: 2.4rem;
+  }
 }
 
-.header-tex p:nth-child(1){
-    @include xs{
+.header-tex p:nth-child(1) {
+  @include xs {
     margin-top: 15rem;
-    }
+  }
 }
 
-
-
-.header-tex-open{
-    @include xs {
+.header-tex-open {
+  @include xs {
     transform: translateX(0%);
     opacity: 1;
     pointer-events: auto;
     visibility: visible;
     position: fixed;
-}
-}
-
-
-.hidden{
-    display: none !important;
+  }
 }
 
-.header-button{
-    display: none;
-    margin-left: 3.6rem;
-    width: 4.8rem;
-    height: 4.8rem;
-    background-color: #ffffff;
-    z-index: 9999;
-    @include xs{
-        display: block;
-        margin-left: auto;
-    }
+.hidden {
+  display: none !important;
 }
 
-.sticky{
-    position: fixed !important;
+.header-button {
+  display: none;
+  margin-left: 3.6rem;
+  width: 4.8rem;
+  height: 4.8rem;
+  background-color: #ffffff;
+  z-index: 9999;
+  position: relative;
+  @include xs {
+    display: block;
+    margin-left: auto;
+  }
 }
 
-.header-button svg{
-   text-align: center;
-   display: block;
-   margin: auto;
+.sticky {
+  position: fixed !important;
 }
 
-.header-text, .header-text:link, .header-text:visited{
-font-size: 1.6rem;
-transition: all 0.3s;
+.header-button svg {
+  display: block;
+  margin: 0 auto;
 }
 
-.header-text:hover, .header-text:active{
-    color: $secondary-color;
-    cursor: pointer;
+.menu-open {
+  top: 8%;
+  right: 7%;
 }
 
-.first{
-margin-left: auto;
-@include xs{
+.header-text,
+.header-text:link,
+.header-text:visited {
+  font-size: 1.6rem;
+  transition: all 0.3s;
+}
+
+.header-text:hover,
+.header-text:active {
+  color: $secondary-color;
+  cursor: pointer;
+}
+
+.first {
+  margin-left: auto;
+  @include xs {
     margin-left: 0;
+  }
 }
 
-}
-
-.main-section{
-    display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    @include max-width;
-    margin: 0 auto;
-    padding: 4.8rem 1.2rem 0 1.2rem;
-    gap: 3.4rem;
-    @include sm {
-        grid-template-columns: 1fr;
-        row-gap: 6.4rem;
-    }
-}
-
-.left-side-grid{
-margin-top: 2.4rem;
-gap: 2.4rem;
- @include grid;
- @include grid-2-cols;
- @include xs {
+.main-section {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  @include max-width;
+  margin: 0 auto;
+  padding: 4.8rem 1.2rem 0 1.2rem;
+  gap: 3.4rem;
+  @include sm {
     grid-template-columns: 1fr;
- }
+    row-gap: 6.4rem;
+  }
 }
 
-.main-img{
-    width: 100%;
+.left-side-grid {
+  margin-top: 2.4rem;
+  gap: 2.4rem;
+  @include grid;
+  @include grid-2-cols;
+  @include xs {
+    grid-template-columns: 1fr;
+  }
 }
 
-.main-text{
-    font-size: 4.4rem;
-    font-weight: 700;
-    color: $main-color;
+.main-img {
+  width: 100%;
 }
 
-.left-side-description p{
-    line-height: $p-line-height;
+.main-text {
+  font-size: 4.4rem;
+  font-weight: 700;
+  color: $main-color;
 }
 
-.btn-text, .btn-text:link, .btn-text:visited{
-    margin-top: 3.2rem;
-    color: #fff;
-    font-weight: 600;
-    transition: all 0.3s;
-    background-color: #f15d51;
-    padding: 2.4rem 4.8rem;
-    letter-spacing: 0.5rem;
-    font-size: 1.6rem;
-    
-}
-.btn-text:hover, .btn-text:active {
-    background-color: $main-color;
-    cursor: pointer;
+.left-side-description p {
+  line-height: $p-line-height;
 }
 
-
-.right-side{
-   background-color: $main-color;
-   padding: 2.4rem; 
+.btn-text,
+.btn-text:link,
+.btn-text:visited {
+  margin-top: 3.2rem;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s;
+  background-color: #f15d51;
+  padding: 2.4rem 4.8rem;
+  letter-spacing: 0.5rem;
+  font-size: 1.6rem;
+}
+.btn-text:hover,
+.btn-text:active {
+  background-color: $main-color;
+  cursor: pointer;
 }
 
-.right-side h3{
-    color: $list-color;
-    font-size: 3.6rem;
-    font-weight: 800;
+.right-side {
+  background-color: $main-color;
+  padding: 2.4rem;
 }
 
-.texts-header, .texts-header:link, .texts-header:visited{
-    color: $list-color;
-    font-size: 3.6rem;
-    font-weight: 800;
-    transition: all 0.3s;
+.right-side h3 {
+  color: $list-color;
+  font-size: 3.6rem;
+  font-weight: 800;
 }
 
-.texts-header:hover, .right-side h3:active{
-    color: #ebae5b;
+.texts-header,
+.texts-header:link,
+.texts-header:visited {
+  color: $list-color;
+  font-size: 3.6rem;
+  font-weight: 800;
+  transition: all 0.3s;
 }
 
-.right-side-list{
-    margin-top: 2.4rem;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
+.texts-header:hover,
+.right-side h3:active {
+  color: #ebae5b;
 }
 
-.right-side-texts:nth-child(2){
-    border-bottom: 1px $list-text-color solid;
-    border-top: 1px $list-text-color solid;
-}
-.right-side-texts:nth-child(1){
-    padding-top: 1.2rem;
-}
-
-.right-side-texts{
-   padding: 3.2rem 0;
+.right-side-list {
+  margin-top: 2.4rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
 }
 
-.texts-header{
-color: #fff;
-font-size: 2.0rem;
+.right-side-texts:nth-child(2) {
+  border-bottom: 1px $list-text-color solid;
+  border-top: 1px $list-text-color solid;
+}
+.right-side-texts:nth-child(1) {
+  padding-top: 1.2rem;
 }
 
-.texts-paragraph{
-color: $list-text-color;
-margin-top: 1.2rem;
-margin-right: 1.2rem;
+.right-side-texts {
+  padding: 3.2rem 0;
 }
 
-.option-list{
-    @include max-width;
-    @include grid;
-    @include grid-3-cols;
-    padding: 0 2.4rem;
-    margin: 6.4rem auto 2.4rem auto;
-    gap: 2.4rem;
-    @include sm{
-        grid-template-columns: 1fr;
-        margin-top: 4.8rem;
-        row-gap: 3.6rem;
-    }
+.texts-header {
+  color: #fff;
+  font-size: 2rem;
 }
 
-.option-item{
-    @include grid;
-    @include grid-2-cols;
-    justify-content: center;
-    grid-template-columns: 1fr 2fr;
-    gap: 2.4rem;
+.texts-paragraph {
+  color: $list-text-color;
+  margin-top: 1.2rem;
+  margin-right: 1.2rem;
 }
 
-.option-image{
-    width: 100%;
+.option-list {
+  @include max-width;
+  @include grid;
+  @include grid-3-cols;
+  padding: 0 2.4rem;
+  margin: 6.4rem auto 2.4rem auto;
+  gap: 2.4rem;
+  @include sm {
+    grid-template-columns: 1fr;
+    margin-top: 4.8rem;
+    row-gap: 3.6rem;
+  }
 }
 
-.option-number{
-    font-size: 3rem;
-    color: #cac7ce;
-
+.option-item {
+  @include grid;
+  @include grid-2-cols;
+  justify-content: center;
+  grid-template-columns: 1fr 2fr;
+  gap: 2.4rem;
 }
 
-.option-header, .option-header:link, .option-header:visited{
-    color: $main-color;
-    font-weight: 700;
-    font-size: 1.8rem;
-    margin-top: 1.2rem;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s;
+.option-image {
+  width: 100%;
 }
 
-.option-header:hover, .option-header:active{
-    color: $secondary-color;
+.option-number {
+  font-size: 3rem;
+  color: #cac7ce;
 }
 
+.option-header,
+.option-header:link,
+.option-header:visited {
+  color: $main-color;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s;
+}
 
-.option-text{
-    margin-top: 2.4rem;
-    line-height: $p-line-height;
-} 
+.option-header:hover,
+.option-header:active {
+  color: $secondary-color;
+}
+
+.option-text {
+  margin-top: 2.4rem;
+  line-height: $p-line-height;
+}
